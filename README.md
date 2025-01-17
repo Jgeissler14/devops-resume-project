@@ -18,3 +18,6 @@ docker build -t devops-python .
 ```
 
 Replace your github username in the github action variable [here](./.github/workflows/release.yaml)
+
+### Required to Build
+By default your action can't deploy to ghcr. Go to settings > actions > general > workflow permissions > Read and write permissions
