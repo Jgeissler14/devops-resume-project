@@ -29,5 +29,5 @@ jobs:
 
           - name: 'Build Inventory Image'
             run: |
-              docker build . --tag ghcr.io/${{ env.username }}/store:latest
-              docker push ghcr.io/${{ env.username }}/store:latest
+              docker build . --tag ghcr.io/${{ env.username }}/devops-python:latest
+              docker push ghcr.io/${{ env.username }}/devops-python:latest
