@@ -1,5 +1,9 @@
 name: Deploy Images to GHCR
 
+env:
+  # cant use ${{ github.actor }} because it has to be lowercase
+  username: 'jgeissler14'
+
 on:
   push:
     branches:
@@ -25,5 +29,5 @@ jobs:
 
           - name: 'Build Inventory Image'
             run: |
-              docker build . --tag ghcr.io/${{ github.actor }}/store:latest
-              docker push ghcr.io/${{ github.actor }}/store:latest
+              docker build . --tag ghcr.io/${{ env.username }}/store:latest
+              docker push ghcr.io/${{ env.username }}/store:latest

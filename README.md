@@ -16,3 +16,5 @@ uvicorn main:app --host 0.0.0.0 --port 8080
 docker run -d --name devops-python -p 8080:80 devops-python
 docker build -t devops-python .
 ```
+
+Replace your github username in the github action variable [here](./.github/workflows/release.yaml)
