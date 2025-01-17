@@ -15,7 +15,7 @@ def get_items():
     """
     Sample curl request:
     curl -X 'GET' \
-      'http://127.0.0.1:8000/items' \
+      'http://127.0.0.1:8080/items' \
       -H 'accept: application/json'
     """
     return store
@@ -25,7 +25,7 @@ def create_item(item: Item):
     """
     Sample curl request:
     curl -X 'POST' \
-      'http://127.0.0.1:8000/items' \
+      'http://127.0.0.1:8080/items' \
       -H 'accept: application/json' \
       -H 'Content-Type: application/json' \
       -d '{
@@ -41,7 +41,17 @@ async def root():
     """
     Sample curl request:
     curl -X 'GET' \
-      'http://127.0.0.1:8000/health' \
+      'http://127.0.0.1:8080/health' \
       -H 'accept: application/json'
     """
     return {"status": 200}
+
+@app.get("/hello")
+async def root():
+    """
+    Sample curl request:
+    curl -X 'GET' \
+      'http://127.0.0.1:8080/hello' \
+      -H 'accept: application/json'
+    """
+    return {"message": "Subscribe!"}
