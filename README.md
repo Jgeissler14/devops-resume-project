@@ -1,4 +1,6 @@
 # DevOps Project: Python API to AWS Kubernetes
+<span style="color:red">If you're here from the DevOps project video, please check the `resume_video` branch. The `main` branch has further commits.</span>
+
 This project walks you through building a Python API, containerizing it with Docker, and automating the CI/CD pipeline with GitHub Actions. You'll then provision infrastructure using Terraform on AWS, deploy the API on an EKS (Elastic Kubernetes Service) cluster. This complete DevOps pipeline demonstrates key skills needed to land a job in DevOps and is a great addition to your portfolio.
 
 You should not copy this, but model after it and customize to fit your interests.
@@ -43,9 +45,13 @@ Check Pods
 ```
 export KUBECONFIG="./kubeconfig"
 kubectl get pods -A+
+```
 
 ## Port Forward
 ```
 kubectl port-forward -n api svc/api-service 8080:80
 ```
+## Prometheus & Grafana
+kubectl port-forward svc/prometheus-community-grafana 8080:80
 
+kubectl port-forward svc/prometheus-community-kube-prometheus 9090
