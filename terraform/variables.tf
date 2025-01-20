@@ -23,3 +23,8 @@ variable "subscription_id" {
   description = "The Azure Subscription ID"
   default     = "8356492a-5b92-4829-95f0-48abf6418162"
 }
+
+variable "username" {
+  description = "The username for the container registry"
+  default     = "jgeissler14"
+}

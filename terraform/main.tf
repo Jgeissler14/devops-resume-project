@@ -4,15 +4,7 @@ module "aks-cluster" {
   location     = var.location
 }
 
-module "kubernetes-config" {
-  depends_on   = [module.aks-cluster]
-  source       = "./kubernetes"
-  cluster_name = local.cluster_name
-  kubeconfig   = data.azurerm_kubernetes_cluster.default.kube_config_raw
-}
-
-module "helm-config" {
-  source     = "./helm"
-
-  depends_on = [module.kubernetes-config]
+resource "local_file" "kubeconfig" {
+  content  = data.azurerm_kubernetes_cluster.default.kube_config_raw
+  filename = "${path.root}/kubeconfig"
 }
