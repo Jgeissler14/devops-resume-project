@@ -1,2 +1,3 @@
 kubeconfig
-**terraform**
+**terraform.tfstate**
+**.terraform**
