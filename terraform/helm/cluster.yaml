@@ -1,7 +1,7 @@
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
-  name: cnpg-sandbox
+  name: cluster-with-metrics
 spec:
   instances: 3
 
@@ -10,3 +10,5 @@ spec:
 
   monitoring:
     enablePodMonitor: true
+  storage:
+    size: 1Gi

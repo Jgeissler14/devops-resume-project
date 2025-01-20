@@ -30,7 +30,7 @@ resource "kubernetes_deployment" "api" {
             spec {
                 container {
                     name  = "api-container"
-                    image = "ghcr.io/${var.username}/devops-pythob:latest"
+                    image = "ghcr.io/${var.username}/devops-python:latest"
 
                     resources {
                         limits = {
@@ -74,3 +74,4 @@ resource "kubernetes_service" "api" {
         }
     }
 }
+
